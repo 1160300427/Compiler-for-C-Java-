@@ -1,0 +1,59 @@
+Program->P	Program->P	Program->P
+P->D P	P->{offset=0} D P	P->{a1} D P
+P->S P	P->S P	P->{a47} S {a48} P
+P->ε	P->ε	P->ε
+D->proc X id ( M ) { P } 	D->proc X id {type='proc';enter(id.lexeme,type,offset);} ( M ) { P }	D->proc X id {a2} ( M ) { P }
+D->T id A ;	D->T id {enter(id.lexeme,T.type,offset)} A ;	D->T id {a3} A ;
+D->record id { P }	D->record id {type='proc';enter(id.lexeme,type,offset);} { P }	D->record id {a4} { P }
+A->= F A	A->= F {gen(id '=' F.addr}A	A->= F {a5}A
+A->ε	A->ε	A->ε
+A->, id A	A->, id {enter(id.lexeme,T.type,offset);offset=offset+T.width;} A	A->, id {a6} A
+M->X id M'	M->X id {enter(id.lexeme,X.type.offset);offset=offset+X.width;} M'	M->X id {a7} M'
+M'->, X id M'	M'->, X id {enter(id.lexeme,X.type.offset);} M'	M'->, X id {a8} M'
+M'->ε	M'->ε	M'->ε
+T->X C	T->X {t=X.type;w=X.width;} C {T.type=C.type;T.width=C.width;}	T->X {a9} C {a10}
+X->int	X->int {X.type=int;X.width=4;}	X->int {a11}
+X->real	X->real {X.type=real;X.width=8;}v	X->real {a12}
+X->char	X->char {X.type=char;X.width=1;}	X->char {a13}
+C->[ digit ] C	C->[ digit ] C {C.type=array(num.val,C1.type);C.width=num.val*C1.width;}	C->[ digit ] C {a14}
+C->ε	C->ε {C.type=t;C.width=w;}	C->ε {a15}
+S->L = E ;	S->L = E ; {gen(L.addr'='E.addr);}	S->L = E ; {a16}
+S->if B then S else S	S->if B then M1 S N else M2 S {backpatch(B.truelist,M1.quad);backpatch(B.falselist,M2.quad);S.nextlist=merge(merge(S1.nextlist,N.nextlist),S2.nextlist);} N->ε {N.nextlist=makekist(nextquad);gen('goto_');}	S->if {a43} B then {a44} S {a45} else {a46} S
+S->while B do S	S->while M1 B do M2 S {backpatch(S1.nextlist,M1.quad);backpatch(B.truelist,M2.quad);S.nextlist=B.falselist;gen('goto' M1.quad);}	S->while {a41} B do {a42} S {a19}
+S->call id ( Elist ) ;	S->call id ( Elist ) ; {n=0;for q中的每个t do{gen('param' t);n=n+1;}gen('call' id.addr ',' n);}	S->call id ( Elist ) ; {a20}
+S->return E ; 	S->return E ; {gen('return' E.addr);}	S->return E ; {a21}
+V->++	V->++	V->++
+V->--	V->--	V->--
+E->G E' 	E->G E' {E.addr=newtemp();gen(E.addr'='F.addr '+' G'.addr);}	E->G E' {a22}
+E'->+ G E'	E'->+ G E' {E'.addr=G.addr;}	E'->+ G E' {a23}
+E'->ε	E'->ε	E'->ε
+G->F G'	G->F G' {G.addr=newtemp();gen(G.addr '=' F.addr '*' G'.addr);}	G->F G' {a24}
+G'->* F G'	G'->* F G' {G'.addr=F.addr;}	G'->* F G' {a25}
+G'->ε	G'->ε	G'->ε
+F->( E )	F->( E ) {F.addr=E.addr}	F->( E ) {a26}
+F->digit	F->digit {F.val=digit.lex;}	F->digit {a27}
+F->char	F->char {F.val = char.lex;}	F->char {a28}
+F->id	F->id {E.addr=lookup(id.lexeme};if E.addr==nil then error;}	F->id {a29}
+L->id L'	L->id L'{L.addr=lookup(id.lexeme);if L.addr==nil then error;}	L->id L' {a30}
+L'->[ digit ] L'	L'->[ digit ] L'	L'->[ digit ] L'
+L'->ε	L'->ε	L'->ε
+B->H B'	B->H B' 	B->H B' 
+B'->or H B'	B'->or M H2 B'{ backpatch(H1.falselist,M.quad);B.truelist=merge(H1.truelist,H2.truelist);B.falselist=H2.falselist;} M->ε {M.quad = nextquad;}	B'->or M H2 B'{ a31} M->ε {a32}
+B'->ε	B'->ε	B'->ε
+H->I H'	H->I H'	H->I H'
+H'->and I H'	H'->and I H'	H'->and I H' {a33}
+H'->ε	H'->ε	H'->ε
+I->not B	I->not B	I->not B {a34}
+I->( B )	I->( B )	I->( B ) {a35}
+I->E Relop E	I->E Relop E	I->E Relop E {a36}
+I->true	I->true	I->true {a37}
+I->false	I->false	I->false {a38}
+Relop-><	Relop-><	Relop-><
+Relop-><=	Relop-><=	Relop-><=
+Relop->==	Relop->==	Relop->==
+Relop->!=	Relop->!=	Relop->!=
+Relop->>	Relop->>	Relop->>
+Relop->>=	Relop->>=	Relop->>=
+Elist->E Elist'	Elist-> E {将q初始化只包含E.addr} Elist'	Elist-> E {a39} Elist'
+Elist'->, E Elist'	Elist'->, E Elist' {将E.addr添加到q的队尾;}	Elist'->, E Elist' {a40}
+Elist'->ε	Elist'->ε	Elist'->ε

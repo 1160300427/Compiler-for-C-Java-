@@ -1,0 +1,31 @@
+Program->P
+P->D P|S P|¦Å
+D->T id A;|record id { P }
+A->= F A|¦Å|, id A
+T->X C
+X->int|real|char
+C->[ num ] C|¦Å
+S->L = E ;|if B then S else S|while B do S
+E->G E'
+E'->+ G E'|¦Å
+G->F G'
+G'->* F G'|¦Å
+F->( E )|id|digit|char
+L->id L'
+L'->[ num ] L'|¦Å
+S->for ( id = E ; B ; id V ) { S }
+V->++|--
+S->switch ( id ) { N default : S }
+N->case digit : S N|¦Å
+B->H B'
+B'->or H B'|¦Å
+H->I H'
+H'->and I H'|¦Å
+I->not B|( B )|E relop E|true|false
+relop-> < | <= | == | != | > | >=
+D->proc X id ( M ) { P }
+M->X id M'|¦Å
+M'->, X id M'|¦Å
+S->call id ( Elist ) ;|return E ;
+Elist->E Elist'
+Elist'->, E Elist'|¦Å

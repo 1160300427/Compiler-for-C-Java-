@@ -1,0 +1,26 @@
+int m;	
+real b; 
+real b;
+char c;
+int[4] a; 
+record stack{ 
+  int num;
+  char value;
+}
+proc int getsum(int u,int y){
+   m = u+y;
+}
+
+m = 5+7*4;
+m = a[0];
+
+while(m>2)
+do
+
+if(m<8)
+then m = m +1;  
+else m = m*2;
+
+d = 1;
+a[8] = 10;
+c = m + a;

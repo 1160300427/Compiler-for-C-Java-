@@ -1,0 +1,28 @@
+	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19
+Program	$																		
+P	$	}																	
+D	proc	int	real	char	record	id	if	while	call	return	$	}							
+A	;																		
+M	)																		
+M'	)																		
+T	id																		
+X	id	[																	
+C	id																		
+S	proc	int	real	char	record	id	if	while	call	return	$	else	}	}	not	(	digit	true	false
+V	)																		
+N																			
+E	;	)	<	<=	==	!=	>	>=	and	or	then	do	,						
+E'	;	)	<	<=	==	!=	>	>=	and	or	then	do	,						
+G	;	)	<	<=	==	!=	>	>=	and	or	then	do	,	+					
+G'	;	)	<	<=	==	!=	>	>=	and	or	then	do	,	+					
+F	=	,	;	*	+	)	<	<=	==	!=	>	>=	and	or	then	do			
+L	=																		
+L'	=																		
+B	then	do	;	and	or	)													
+B'	then	do	;	and	or	)													
+H	or	then	do	;	and	)													
+H'	or	then	do	;	and	)													
+I	and	or	then	do	;														
+Relop	(	digit	char	id															
+Elist	)																		
+Elist'	)																		

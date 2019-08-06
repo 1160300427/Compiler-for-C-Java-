@@ -1,0 +1,60 @@
+	1	2	3	4	5	6	7	8	9	10	11	12	13	14
+Program->P	$	proc	int	real	char	record	id	if	while	call	return			
+P->D P	proc	int	real	char	record									
+P->S P	id	if	while	call	return									
+P->¦Å	$	}												
+D->proc X id ( M ) { P }	proc													
+D->T id A ;	int	real	char											
+D->record id { P }	record													
+A->= F A	=													
+A->¦Å	;													
+A->, id A	,													
+M->X id M'	int	real	char											
+M'->, X id M'	,													
+M'->¦Å	)													
+T->X C	int	real	char											
+X->int	int													
+X->real	real													
+X->char	char													
+C->[ digit ] C	[													
+C->¦Å	id													
+S->L = E	id													
+S->if B then S else S	if													
+S->while B do S	while													
+S->call id ( Elist ) ;	call													
+S->return E ;	return													
+V->++	++													
+V->--	--													
+E->G E'	(	digit	char	id										
+E'->+ G E'	+													
+E'->¦Å	:	)	<	<=	==	!=	>	>=	and	or	then	do	,	
+G->F G'	digit	(	char	id										
+G'->* F G'	*													
+G'->¦Å	+	;	)	<	<=	==	!=	>	>=	and	or	then	do	,
+F->( E )	(													
+F->digit	digit													
+F->char	char													
+F->id	id													
+L->id L'	id													
+L'->[ digit ] L'	[													
+L'->¦Å	=													
+B->H B'	not	(	digit	char	id	true	false							
+B'->or H B'	or													
+B'->¦Å	then	do	;	and	)									
+H->I H'	not	(	digit	char	id	true	false							
+H'->and I H'	and													
+H'->¦Å	or	then	do	;	and	)								
+I->not B	not													
+I->( B )	(													
+I->E Relop E	(	digit	char	id										
+I->true	true													
+I->false	false													
+Relop-><	<													
+Relop-><=	<=													
+Relop->==	==													
+Relop->!=	!=													
+Relop->>	>													
+Relop->>=	>=													
+Elist-> E Elist'	(	digit	char	id										
+Elist'->, E Elist'	,													
+Elist'->¦Å	)													

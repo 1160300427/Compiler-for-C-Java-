@@ -1,0 +1,265 @@
+Program :  P  
+P :  P  ,D  ,{a1}  
+D :  ;  ,A  ,{a3}  ,id  ,T  
+T :  {a10}  ,C  ,{a9}  ,X  
+X :  {a11}  ,int  
+int :  
+C :  {a15}  
+id :  
+A :  
+; :  
+P :  P  ,D  ,{a1}  
+D :  ;  ,A  ,{a3}  ,id  ,T  
+T :  {a10}  ,C  ,{a9}  ,X  
+X :  {a12}  ,real  
+real :  
+C :  {a15}  
+id :  
+A :  
+; :  
+P :  P  ,D  ,{a1}  
+D :  ;  ,A  ,{a3}  ,id  ,T  
+T :  {a10}  ,C  ,{a9}  ,X  
+X :  {a12}  ,real  
+real :  
+C :  {a15}  
+id :  
+A :  
+; :  
+P :  P  ,D  ,{a1}  
+D :  ;  ,A  ,{a3}  ,id  ,T  
+T :  {a10}  ,C  ,{a9}  ,X  
+X :  {a13}  ,char  
+char :  
+C :  {a15}  
+id :  
+A :  
+; :  
+P :  P  ,D  ,{a1}  
+D :  ;  ,A  ,{a3}  ,id  ,T  
+T :  {a10}  ,C  ,{a9}  ,X  
+X :  {a11}  ,int  
+int :  
+C :  {a14}  ,C  ,]  ,digit  ,[  
+[ :  
+digit :  
+] :  
+C :  {a15}  
+id :  
+A :  
+; :  
+P :  P  ,D  ,{a1}  
+D :  }  ,P  ,{  ,{a4}  ,id  ,record  
+record :  
+id :  
+{ :  
+P :  P  ,D  ,{a1}  
+D :  ;  ,A  ,{a3}  ,id  ,T  
+T :  {a10}  ,C  ,{a9}  ,X  
+X :  {a11}  ,int  
+int :  
+C :  {a15}  
+id :  
+A :  
+; :  
+P :  P  ,D  ,{a1}  
+D :  ;  ,A  ,{a3}  ,id  ,T  
+T :  {a10}  ,C  ,{a9}  ,X  
+X :  {a13}  ,char  
+char :  
+C :  {a15}  
+id :  
+A :  
+; :  
+P :  
+} :  
+P :  P  ,D  ,{a1}  
+D :  }  ,P  ,{  ,)  ,M  ,(  ,{a2}  ,id  ,X  ,proc  
+proc :  
+X :  {a11}  ,int  
+int :  
+id :  
+( :  
+M :  M'  ,{a7}  ,id  ,X  
+X :  {a11}  ,int  
+int :  
+id :  
+M' :  M'  ,{a8}  ,id  ,X  ,,  
+, :  
+X :  {a11}  ,int  
+int :  
+id :  
+M' :  
+) :  
+{ :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  
+E' :  {a23}  ,E'  ,G  ,+  
++ :  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  
+E' :  
+; :  
+P :  
+} :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a27}  ,digit  
+digit :  
+G' :  
+E' :  {a23}  ,E'  ,G  ,+  
++ :  
+G :  {a24}  ,G'  ,F  
+F :  {a27}  ,digit  
+digit :  
+G' :  {a25}  ,G'  ,F  ,*  
+* :  
+F :  {a27}  ,digit  
+digit :  
+G' :  
+E' :  
+; :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  
+E' :  
+; :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a19}  ,S  ,{a42}  ,do  ,B  ,{a41}  ,while  
+while :  
+B :  B'  ,H  
+H :  H'  ,I  
+I :  {a35}  ,)  ,B  ,(  
+( :  
+B :  B'  ,H  
+H :  H'  ,I  
+I :  {a36}  ,E  ,Relop  ,E  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  
+E' :  
+Relop :  >  
+> :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a27}  ,digit  
+digit :  
+G' :  
+E' :  
+H' :  
+B' :  
+) :  
+H' :  
+B' :  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  
+E' :  {a23}  ,E'  ,G  ,+  
++ :  
+G :  {a24}  ,G'  ,F  
+F :  {a27}  ,digit  
+digit :  
+G' :  
+E' :  
+; :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  {a25}  ,G'  ,F  ,*  
+* :  
+F :  {a27}  ,digit  
+digit :  
+G' :  
+E' :  
+; :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a27}  ,digit  
+digit :  
+G' :  
+E' :  
+; :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  L'  ,]  ,digit  ,[  
+[ :  
+digit :  
+] :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a27}  ,digit  
+digit :  
+G' :  
+E' :  
+; :  
+P :  P  ,{a48}  ,S  ,{a47}  
+S :  {a16}  ,;  ,E  ,=  ,L  
+L :  {a30}  ,L'  ,id  
+id :  
+L' :  
+= :  
+E :  {a22}  ,E'  ,G  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  
+E' :  {a23}  ,E'  ,G  ,+  
++ :  
+G :  {a24}  ,G'  ,F  
+F :  {a29}  ,id  
+id :  
+G' :  
+E' :  
+; :  
+P :  

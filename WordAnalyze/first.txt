@@ -1,0 +1,28 @@
+	1	2	3	4	5	6	7	8	9	10	11
+Program	proc	int	real	char	record	id	if	while	call	return	¦Å
+P	proc	int	real	char	record	id	if	while	call	return	¦Å
+D	proc	int	real	char	record						
+A	=	¦Å	,								
+M	int	real	char	¦Å							
+M'	,	¦Å									
+T	int	real	char								
+X	int	real	char								
+C	[	¦Å									
+S	id	if	while	call	return						
+V	++	--									
+N	¦Å										
+E	(	digit	char	id							
+E'	+	¦Å									
+G	(	digit	char	id							
+G'	*	¦Å									
+F	(	digit	char	id							
+L	id										
+L'	[	¦Å									
+B	not	(	digit	char	id	true	false				
+B'	or	¦Å									
+H	not	(	digit	char	id	true	false				
+H'	and	¦Å									
+I	not	(	digit	char	id	true	false				
+Relop	<	<=	==	!=	>	>=					
+Elist	(	digit	char	id							
+Elist'	,	¦Å									
